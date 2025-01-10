@@ -10,7 +10,8 @@ tasks:
       else
         cd playground/$experiment
       fi
-command: |
-    nvm install 13.3.0 && npm install && npm start
+    command: |
+      nvm install 13.3.0 && npm install && npm start
+
 
 
