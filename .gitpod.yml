@@ -4,10 +4,11 @@ ports:
 
 tasks:
   - before: |
-      export experiment="chess"   # Defina o nome da versão desejada
+      export experiment=$(echo $GP_WORKSPACE_URL | sed 's/.*experiment=\([^&]*\).*/\1/') #variável passada pela url, como: ?experiment=chess
       if [[ -z "$experiment" ]]; then
         cd playground/1st-proof-of-concept;
       else
         cd playground/$experiment;
       fi
     command: nvm install 13.3.0 && npm install && npm start
+
