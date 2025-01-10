@@ -1,8 +1,13 @@
 ports:
   - port: 3000
     onOpen: open-preview
+
 tasks:
-  - before: 
-        export experiment="chess"   # Defina o nome da versão desejada
-        if [[ -z "$experiment" ]]; then cd playground/1st-proof-of-concept; else cd playground/$experiment; fi
+  - before: |
+      export experiment="chess"   # Defina o nome da versão desejada
+      if [[ -z "$experiment" ]]; then
+        cd playground/1st-proof-of-concept;
+      else
+        cd playground/$experiment;
+      fi
     command: nvm install 13.3.0 && npm install && npm start
