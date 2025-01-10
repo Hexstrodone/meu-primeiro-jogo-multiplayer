@@ -4,7 +4,7 @@ ports:
 
 tasks:
   - before: |
-      export experiment="chess"  # Definindo a variável experiment como variável de ambiente
+      export experiment="implementacao-snake"  # Definindo a variável experiment como variável de ambiente
       if [ -z "$experiment" ]; then
         cd playground/1st-proof-of-concept
       else
