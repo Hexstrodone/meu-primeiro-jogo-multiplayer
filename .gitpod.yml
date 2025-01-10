@@ -4,12 +4,13 @@ ports:
 
 tasks:
   - before: |
-      experiment="chess"  # Definindo a variável experiment aqui
-      if [[ -z "$experiment" ]]; then
+      export experiment="chess"  # Definindo a variável experiment como variável de ambiente
+      if [ -z "$experiment" ]; then
         cd playground/1st-proof-of-concept
       else
         cd playground/$experiment
       fi
   command: |
     nvm install 13.3.0 && npm install && npm start
+
 
